@@ -8,6 +8,7 @@ const attendedRoutes = require('./routes/attendedRoutes');
 const orderRoutes = require("./routes/orderRoutes");
 const crewRoutes = require("./routes/crewRoutes")
 const otpRoutes = require("./routes/otpRoutes")
+const acceptedBookingRoutes = require("./routes/acceptedBookingRoutes");
 dotenv.config();
 connectDB();
 
@@ -20,6 +21,8 @@ app.use('/api/attended', attendedRoutes);
 app.use('/api/crewbookings', crewRoutes);
 
 app.use('/api/orders', orderRoutes);  
+ 
+app.use('/api/accepted-bookings', acceptedBookingRoutes);
 
 app.use('/api/otp', otpRoutes);
 const PORT = process.env.PORT || 6001;
